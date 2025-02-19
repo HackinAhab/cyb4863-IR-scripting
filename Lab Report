@@ -1,0 +1,22 @@
+Part 3: Reflections on Automation Based on Preparation and Detection Phase of Asset Inverntory and Suspicious Login Monitoring
+Inventory Script
+Introduction: Looking at two security automation scripts the System inventory script monitors the system's user, software, patches, and USB history as well as the suspicious login detection that monitors for failed logins as well as detects brute force attacks blocking the malicious IPs. The importance behind this is that it is to improve security efficiency and automate monitoring to enhance threat detection. 
+Scripts Purpose: The script used for this was Python which we created and adapted to identify the active users, installed software, and missing patches. Also, looking into monitoring the listening services such as running process and USB connection history. There is also the need to detect privileged sudo users.  
+Findings: 
+Two active users with one having the root access
+More than 50 installed applications that included security tools
+Detected missing security patches for critical software
+Recent USB connections recorded with potential security risks
+The unrestricted sudo privileges for a user increased risks
+
+Login Detection Script
+Script Type/Purpose: Python was the script type used. The purpose of this was to monitor the login attempts from the authentication logs. Also detecting the repeated failed login attempts from the same IP address. Moreover, blocking the brute-force attackers after 5 failed attempts. Then monitor privileged account logins for unusual access. 
+Key Findings: One key finding was detecting and blocking brute force attacks from a remote IP. Another was logged privileged account logins for security review. Moreover, then successfully simulating the failed logins and verifying the detection accuracy.
+Reflections for Automation
+Speed: Instant threat detection and response
+Consistency: Standardized security monitoring
+Efficiency: Reducing manual security workload
+Scalability: Deploying across multiple systems
+Lessons Learned:
+The potential of log file access restrictions and handling the log rotations. 
+Improving the email alerts, GeoIP tracking, and database logging for forensic analysis. 
