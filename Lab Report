@@ -48,8 +48,8 @@ The Login Detection Script, crafted in Python, is designed to enhance security b
 Additionally, the script monitors privileged accounts for any unusual access, ensuring heightened awareness and protection for privileged accounts.
 
 Findings: 
-Detected brute force attack from remote IP(Script then blocked it)
-Concerning user report logged for security review.
+- Detected brute force attack from remote IP(Script then blocked it)
+- Concerning user report logged for security review.
 
 Reflection on Automation
 Team 8 found that Automation in terms of speed is fast compared to a human user. As for Consistency it gets results accurately and reliably, ignoring standardizations of the operating System with file location.
