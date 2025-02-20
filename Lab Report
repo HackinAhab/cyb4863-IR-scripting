@@ -20,3 +20,43 @@ Scalability: Deploying across multiple systems
 Lessons Learned:
 The potential of log file access restrictions and handling the log rotations. 
 Improving the email alerts, GeoIP tracking, and database logging for forensic analysis. 
+
+
+
+
+
+Introduction:
+To strengthen our system security knowledge and do this project, we made two Python scripts: the Inventory Script and the Login Detection Script. The Inventory Script identifies active users, installed software, missing patches, and monitors running processes and USB history, while also detecting privileged sudo users.
+The Login Detection Script enhances security by monitoring authentication logs, blocking IPs after multiple failed login attempts, and tracking unusual access to privileged accounts. These scripts automate critical monitoring tasks, improving security oversight and threat detection efficiency.
+
+Inventory Script---------------------------------------------------------
+
+Introduction:
+We utilized Python to develop and customize a script designed to identify active users, installed software, and any missing patches. Additionally, the script monitors listening services, including running processes and USB connection history. It also identifies privileged sudo users, ensuring comprehensive system oversight and security.
+
+Findings:
+- 2 Users with 1 having sudo Powers
+- 50 Installed applications(Including Security Tools)
+- Security patches for critical Software Missing
+- Recent USB connections logged(Also Security Risks)
+- Unrestricted user with sudo privileges.
+
+Login Detection Script---------------------------------------------------
+
+Introduction:
+The Login Detection Script, crafted in Python, is designed to enhance security by monitoring authentication logs for login attempts. It detects multiple failed login attempts from the same IP address and automatically blocks users after five unsuccessful tries to stop brute force attacks. 
+Additionally, the script monitors privileged accounts for any unusual access, ensuring heightened awareness and protection for privileged accounts.
+
+Findings: 
+Detected brute force attack from remote IP(Script then blocked it)
+Concerning user report logged for security review.
+
+Reflection on Automation
+Team 8 found that Automation in terms of speed is fast compared to a human user. As for Consistency it gets results accurately and reliably, ignoring standardizations of the operating System with file location.
+Using Automation also requires little work and can be easily deployed across multiple devices. We learned the potential of log access, restrictions, and handling log rotations. Additionally improving email alerts, GeoIP tracking, and database logging for forensic analysis. 
+
+Conclusion:
+To strengthen our knowledge on system security, we developed two Python scripts: The Inventory Script and the Login Detection Script. The Inventory Script identifies active users, installed software, missing patches, USB history, and monitors running processes.
+While also detecting privileged sudo users. The Login Detection Script enhances security by monitoring authentication logs, blocking IPs after multiple failed login attempts, and tracking unusual access to privileged accounts. These scripts automate critical monitoring tasks, improving security oversight and threat detection efficiency.
+
+"AI empowers cybersecurity by providing advanced threat detection, rapid response capabilities, and adaptive learning to continuously enhance defenses against evolving threats, ensuring a proactive and resilient security posture." - From a LLM
