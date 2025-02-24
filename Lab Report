@@ -1,62 +1,63 @@
-Part 3: Reflections on Automation Based on Preparation and Detection Phase of Asset Inverntory and Suspicious Login Monitoring
-Inventory Script
-Introduction: Looking at two security automation scripts the System inventory script monitors the system's user, software, patches, and USB history as well as the suspicious login detection that monitors for failed logins as well as detects brute force attacks blocking the malicious IPs. The importance behind this is that it is to improve security efficiency and automate monitoring to enhance threat detection. 
-Scripts Purpose: The script used for this was Python which we created and adapted to identify the active users, installed software, and missing patches. Also, looking into monitoring the listening services such as running process and USB connection history. There is also the need to detect privileged sudo users.  
-Findings: 
-Two active users with one having the root access
-More than 50 installed applications that included security tools
-Detected missing security patches for critical software
-Recent USB connections recorded with potential security risks
-The unrestricted sudo privileges for a user increased risks
+# Part 3: Reflections on Automation Based on Preparation and Detection Phase of Asset Inventory and Suspicious Login Monitoring
 
-Login Detection Script
-Script Type/Purpose: Python was the script type used. The purpose of this was to monitor the login attempts from the authentication logs. Also detecting the repeated failed login attempts from the same IP address. Moreover, blocking the brute-force attackers after 5 failed attempts. Then monitor privileged account logins for unusual access. 
-Key Findings: One key finding was detecting and blocking brute force attacks from a remote IP. Another was logged privileged account logins for security review. Moreover, then successfully simulating the failed logins and verifying the detection accuracy.
-Reflections for Automation
-Speed: Instant threat detection and response
-Consistency: Standardized security monitoring
-Efficiency: Reducing manual security workload
-Scalability: Deploying across multiple systems
-Lessons Learned:
-The potential of log file access restrictions and handling the log rotations. 
-Improving the email alerts, GeoIP tracking, and database logging for forensic analysis. 
+## Inventory Script
 
+### Introduction
 
+We developed two Python scripts: the Inventory Script and the Login Detection Script. The Inventory Script identifies active users, installed software, missing patches, and monitors running processes and USB history. It also detects privileged sudo users, ensuring comprehensive system oversight and security.
 
+### Script's Purpose
 
+The Python script was created and adapted to:
+- Identify active users, installed software, and missing patches.
+- Monitor listening services, running processes, and USB connection history.
+- Detect privileged sudo users.
 
-Introduction:
-To strengthen our system security knowledge and do this project, we made two Python scripts: the Inventory Script and the Login Detection Script. The Inventory Script identifies active users, installed software, missing patches, and monitors running processes and USB history, while also detecting privileged sudo users.
-The Login Detection Script enhances security by monitoring authentication logs, blocking IPs after multiple failed login attempts, and tracking unusual access to privileged accounts. These scripts automate critical monitoring tasks, improving security oversight and threat detection efficiency.
+### Findings
 
-Inventory Script---------------------------------------------------------
+- **Active Users**: 2 users, with 1 having root access.
+- **Installed Applications**: Over 50, including security tools.
+- **Missing Security Patches**: Detected for critical software.
+- **USB Connections**: Recent connections logged with potential security risks.
+- **Sudo Privileges**: Unrestricted privileges for a user increased risks.
 
-Introduction:
-We utilized Python to develop and customize a script designed to identify active users, installed software, and any missing patches. Additionally, the script monitors listening services, including running processes and USB connection history. It also identifies privileged sudo users, ensuring comprehensive system oversight and security.
+## Login Detection Script
 
-Findings:
-- 2 Users with 1 having sudo Powers
-- 50 Installed applications(Including Security Tools)
-- Security patches for critical Software Missing
-- Recent USB connections logged(Also Security Risks)
-- Unrestricted user with sudo privileges.
+### Script Type/Purpose
 
-Login Detection Script---------------------------------------------------
+This Python script monitors login attempts from authentication logs. It detects repeated failed login attempts from the same IP address and blocks brute-force attackers after 5 failed attempts. It also monitors privileged account logins for unusual access.
 
-Introduction:
-The Login Detection Script, crafted in Python, is designed to enhance security by monitoring authentication logs for login attempts. It detects multiple failed login attempts from the same IP address and automatically blocks users after five unsuccessful tries to stop brute force attacks. 
-Additionally, the script monitors privileged accounts for any unusual access, ensuring heightened awareness and protection for privileged accounts.
+### Key Findings
 
-Findings: 
-- Detected brute force attack from remote IP(Script then blocked it)
-- Concerning user report logged for security review.
+- **Brute Force Attacks**: Detected and blocked from a remote IP.
+- **Privileged Account Logins**: Logged for security review.
+- **Detection Accuracy**: Successfully simulated failed logins and verified accuracy.
 
-Reflection on Automation
-Team 8 found that Automation in terms of speed is fast compared to a human user. As for Consistency it gets results accurately and reliably, ignoring standardizations of the operating System with file location.
-Using Automation also requires little work and can be easily deployed across multiple devices. We learned the potential of log access, restrictions, and handling log rotations. Additionally improving email alerts, GeoIP tracking, and database logging for forensic analysis. 
+## Reflections on Automation
 
-Conclusion:
-To strengthen our knowledge on system security, we developed two Python scripts: The Inventory Script and the Login Detection Script. The Inventory Script identifies active users, installed software, missing patches, USB history, and monitors running processes.
-While also detecting privileged sudo users. The Login Detection Script enhances security by monitoring authentication logs, blocking IPs after multiple failed login attempts, and tracking unusual access to privileged accounts. These scripts automate critical monitoring tasks, improving security oversight and threat detection efficiency.
+### Speed
 
-"AI empowers cybersecurity by providing advanced threat detection, rapid response capabilities, and adaptive learning to continuously enhance defenses against evolving threats, ensuring a proactive and resilient security posture." - From a LLM
+- Instant threat detection and response.
+
+### Consistency
+
+- Standardized security monitoring.
+
+### Efficiency
+
+- Reducing manual security workload.
+
+### Scalability
+
+- Deploying across multiple systems.
+
+### Lessons Learned
+
+- Handling log file access restrictions and log rotations.
+- Improving email alerts, GeoIP tracking, and database logging for forensic analysis.
+
+## Conclusion
+
+To strengthen our knowledge of system security, we developed two Python scripts: the Inventory Script and the Login Detection Script. These scripts automate critical monitoring tasks, enhancing security oversight and threat detection efficiency.
+
+> "AI empowers cybersecurity by providing advanced threat detection, rapid response capabilities, and adaptive learning to continuously enhance defenses against evolving threats, ensuring a proactive and resilient security posture." - From a LLM
