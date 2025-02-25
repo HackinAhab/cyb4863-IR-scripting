@@ -23,6 +23,22 @@ def get_installed_apps():
     
     return apps
 
+def get_outdated_packages():
+    outdated_packages ={}
+    if os.path.exists("/etc/debian_version"):
+        cmd = 'apt list --upgradable'
+    elif os.path.exists("/etc/redhat-release"):
+        cmd = 'dnf check-update --advisories=security --minimal'
+    try:
+        result = subprocess.check_output(cmd,shell=True,text=True).strip()
+        for line in result.split('\n'):
+            if line:
+                name,version = line.split(" ", 1)
+                outdated_packages[name] = version
+    except subprocess.CalledProcessError:
+        return {"error": "Failed to retrieve out of data packages"}
+    return outdated_packages
+
 def get_listening_services():
     services = []
     try:
