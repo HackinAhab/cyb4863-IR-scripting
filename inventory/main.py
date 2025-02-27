@@ -26,15 +26,17 @@ def get_installed_apps():
 def get_outdated_packages():
     outdated_packages ={}
     if os.path.exists("/etc/debian_version"):
-        cmd = 'apt list --upgradable'
+        cmd = 'apt list --upgradable 2>/dev/null'
     elif os.path.exists("/etc/redhat-release"):
-        cmd = 'dnf check-update --advisories=security --minimal'
+        cmd = 'dnf check-update --advisories=security --quiet'
     try:
         result = subprocess.check_output(cmd,shell=True,text=True).strip()
         for line in result.split('\n'):
             if line:
-                name,version = line.split(" ", 1)
-                outdated_packages[name] = version
+                if not "Listing" in line:
+                    name  = line.split(" ")[0]
+                    version = line.split(" ")[1]
+                    outdated_packages[name] = version
     except subprocess.CalledProcessError:
         return {"error": "Failed to retrieve out of data packages"}
     return outdated_packages
@@ -163,6 +165,7 @@ def collect_inventory():
         "active_user_processes": get_active_user_processes(),
         "sudoers": check_sudoers(),
         "device_history": get_device_history(),
+        "outdated_packages": get_outdated_packages(),
     }
     
     with open("device_inventory.json", "w") as f:
